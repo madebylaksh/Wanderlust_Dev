@@ -27,7 +27,7 @@ const MongoStore = require("connect-mongo").default;
 const store = MongoStore.create({
     mongoUrl: MONGO_URL,
     crypto: {
-        secret: "secretKeyLaksh"
+        secret: process.env.SESSION_SECRET
     },
     touchAfter: 24*3600
 });
@@ -36,7 +36,7 @@ store.on("error", (e)=> {
 });
 const sessionOptions = {
     store,
-    secret: "secretKeyLaksh", 
+    secret: process.env.SESSION_SECRET, 
     resave: false, 
     saveUninitialized: true, 
     cookie: {
