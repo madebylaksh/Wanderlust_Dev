@@ -1,0 +1,196 @@
+body {
+    font-family: Plus Jakarta Sans !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.containerBody {
+    flex: 1
+}
+.listings-container {
+    padding: 2rem 5rem;
+}
+
+
+/*Navbar*/
+.navbar {
+    height: 5rem;
+    background-color: white;
+}
+.fa-compass {
+    color: #fe424d;
+    font-size: 2rem;
+}
+.nav-link {
+    color: #222222 !important;
+}
+.username {
+    color: rgb(255,0,0) !important;
+    font-style: italic;
+}
+
+
+/*Footers*/
+.f-info {
+    height: 8rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.8rem;
+}
+.f-info-links {
+    width: 100%;
+}
+.f-info-links a {
+    text-decoration: none;
+    color: #222222;
+}
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+.f-info-socials {
+    width: 100%;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.f-info-socials i {
+    margin-right: 1rem;
+} 
+
+
+
+/* Index */
+#filters {
+    display: flex;
+    margin-left: 2rem;
+    font-size: large;
+}
+.filter {
+    text-align: center;
+    margin-top: 2rem;   
+    margin-right: 2rem;
+    opacity: 0.6;
+}
+.filter:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+.filter p {
+    font-size: 0.8rem;
+}
+.taxToggle {
+    border: 1px solid black !important;
+    border-radius: 1rem;
+    padding: 1rem 0rem !important;
+    padding-left: 2rem !important;
+    padding-right: 4.5rem !important; 
+}
+#tax-info {
+    font-style: italic;     
+}
+#search-btn {
+    background-color: #fe424d;
+    color: white;
+    border: none;
+    border-radius: 5rem;
+}
+#search-btn:hover{
+    background-color: #fe424d;
+    color: white;
+    border: none;
+}
+#search-btn i {
+    display: inline;
+    margin-right: 1rem;
+}
+#search-bar {
+    border-radius: 5rem;
+    padding: 0.5rem 1rem 0.5rem 3rem;
+    width: 25rem;
+}
+
+
+/*Cards*/
+.listing-card {
+    border: none !important;
+    margin-bottom: 4rem;
+    min-width: 12rem !important ;
+}
+.card-img-top {
+    border-radius: 1rem !important;
+    width: 100% !important;
+    height: 20vw;
+    min-height: 10rem;
+}
+.card-img-top:hover {
+    background-color: white;
+    opacity: 0.8;
+}
+.card-body {
+    padding: 0px !important;
+}
+.listing-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/*New*/
+.add-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+    padding: 1rem !important;
+}
+
+
+
+/*Edit*/
+.edit-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+    padding: 1rem !important;
+}
+
+
+
+/*Show*/
+.img-show {
+    height: 30rem;
+}
+.img-show:hover {
+    opacity: 1;
+}
+.delete-btn {
+    padding: 1rem !important;
+    border: none !important;
+}
+.review-btn {
+    padding: 1rem !important;
+}
+textarea[name="review[comment]"] {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+    font-style: italic;
+}
+.review-card.card-text {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: large;
+}
+
+
+/* User */
+
+/* Signup */
+.signup-btn {
+    padding: 1rem 5rem !important; 
+    background-color: #fe424d !important;
+    border: none !important;
+}
+.signup input {
+    padding: 1rem;
+}

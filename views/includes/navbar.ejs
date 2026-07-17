@@ -1,0 +1,51 @@
+<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary"> -->
+  
+  
+<nav class="navbar navbar-expand-lg bg-body-light border-bottom sticky-top mb-5">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="/"> <i class="fa-regular fa-compass"></i> </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse bg-white" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/">Explore</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search listings" aria-label="Search" id="search-bar"/>
+                <button class="btn btn-outline-success" type="submit" id="search-btn"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+            </form> 
+            <ul class="navbar-nav mb-2 mb-lg-0 ms-auto me-3">
+                <li class="nav-item">
+                    <a class="nav-link" href="/listings/new">Add new Listing</a>
+                </li>
+                <% if (!isAuthenticated) { %>
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="/user/signup"><b>Sign Up</b></a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/user/login"><b>Login</b></a>
+                  </li>
+              <% } 
+              else { %>
+                    <li class="nav-item pt-2 username">
+                        @<%- user.username %>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user/logout"><b>Log Out</b></a>
+                    </li>
+                    </div>
+              <% } %> 
+          </ul>
+
+          <!--
+          <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+              <button class="btn btn-outline-success" type="submit">Search</button>
+          </form> 
+          -->
+      </div>
+  </div>
+</nav>

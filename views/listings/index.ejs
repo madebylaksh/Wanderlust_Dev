@@ -1,0 +1,105 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+    <body>
+        <!-- <a href="/listings/new"> Create a new Listing </a> -->
+        
+        <div class="d-flex align-items-center">
+            <div id="filters">
+                <div class="filter">
+                    <i class="fa-solid fa-fire"></i>
+                    <p>Trending</p>
+                </div>
+                <div class="filter">
+                    <i class="fa-solid fa-bed"></i>
+                    <p>Rooms</p>
+                </div>
+                <div class="filter">
+                    <i class="fa-solid fa-city"></i>
+                    <p>Iconic Cities</p>
+                </div>
+                <div class="filter">
+                    <i class="fa-solid fa-mountain"></i>
+                    <p>Mountains</p>
+                </div>
+                <div class="filter">
+                    <i class="fa-brands fa-fort-awesome"></i>
+                    <p>Castles</p>
+                </div>
+                <div class="filter">
+                    <i class="fa-solid fa-person-swimming"></i>
+                    <p>Amazing Pools</p>
+                </div>
+                <div class="filter">
+                    <i class="fa-solid fa-campground"></i>
+                    <p>Camping</p>
+                </div>
+                <div class="filter">
+                    <i class="fa-solid fa-cow"></i>
+                    <p>Farms</p>
+                </div>
+                <div class="filter">
+                    <i class="fa-solid fa-snowflake"></i>
+                    <p>Arctic</p>
+                </div>
+                <div class="filter">
+                    <i class="fa-solid fa-igloo"></i>
+                    <p>Domes</p>
+                </div>
+                <div class="filter">
+                    <i class="fa-solid fa-ship"></i>
+                    <p>Boats</p>
+                </div>
+                <div class="filter">
+                    <i class="fa-solid fa-city"></i>
+                    <p>Iconic Cities</p>
+                </div>
+                <div class="filter">
+                    <i class="fa-solid fa-mountain"></i>
+                    <p>Mountains</p>
+                </div>
+            </div>
+            <div class="taxToggle ms-auto me-4 form-check-reverse form-switch">
+                <label class="form-check-label" for="switchCheckDefault">Display total after taxes</label>
+                <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+            </div>
+        </div>  
+        
+        <div class="listings-container">
+            <div class="row justify-content-center">
+                <!-- <h1> All Listings </h1> -->
+                <% for (let list of allListings) { %>
+                    <div class="col-8 col-lg-3 col-md-4 col-sm-6">
+                        <div class="card listing-card">
+                            <a class="listing-link" href="/listings/<%-list._id%>">
+                                <img src="<%-list.image.url%>" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <p class="card-text">
+                                        <b><%- list.title %></b> <br>
+                                        &#8377;<%- list.price.toLocaleString("en-IN")%>/ night &nbsp;&nbsp;&nbsp;&nbsp; <span id="tax-info" hidden> +18% GST </span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                <% } %>
+                
+                <% for (let list of allListings) { %>
+                    <div class="col-8 col-lg-3 col-md-4 col-sm-6">
+                        <div class="card listing-card">
+                            <a class="listing-link" href="/listings/<%-list._id%>">
+                                <img src="<%-list.image.url%>" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <p class="card-text">
+                                        <b><%- list.title %></b> <br>
+                                        &#8377;<%- list.price.toLocaleString("en-IN")%>/ night &nbsp;&nbsp;&nbsp;&nbsp; <span id="tax-info" hidden> +18% GST </span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                <% } %>
+                
+            </div>
+        </div>
+    </body>
+    <script src="/js/taxSwitch.js"></script>
