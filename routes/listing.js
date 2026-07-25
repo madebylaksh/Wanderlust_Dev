@@ -32,4 +32,3 @@ router
 router.delete("/:id/delete", isLoggedIn, isOwner, listingController.deleteListing);
 
 
-

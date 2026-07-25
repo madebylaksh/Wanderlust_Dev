@@ -28,6 +28,65 @@ body {
     color: rgb(255,0,0) !important;
     font-style: italic;
 }
+#search-btn {
+    background-color: #fe424d;
+    color: white;
+    border: none;
+    border-radius: 5rem;
+}
+#search-btn:hover{
+    background-color: #fe424d;
+    color: white;
+    border: none;
+}
+#search-btn i {
+    display: inline;
+    margin-right: 1rem;
+}
+#search-bar {
+    border-radius: 5rem;
+    padding: 0.5rem 1rem 0.5rem 3rem;
+    width: 25rem;
+}
+#search-form {
+    position: relative;
+}
+.suggestions {
+    position: absolute;
+    top: 3rem;
+    left: 2rem;
+    background-color: white;
+    width: 70%;
+    height: fit-content;
+    max-height: 15rem;
+    overflow-y: auto;                                   /* scrollbar only when required */
+    font-size: 0.9rem;
+    padding: 1rem;
+    padding-left: 2rem;
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem;
+    display: none;
+    scrollbar-width: thin;
+    scrollbar-color: white rgba(254, 66, 77, 0.1);
+}
+.suggestion {
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid gray;
+    margin-top: 1rem;
+    text-decoration: none;
+    color: black !important;
+    display: block;
+}
+.suggestion:last-child {
+    border-bottom: none;
+}
+.suggestion:hover {
+    background-color: rgba(254,66,77,0.1);
+}
+.suggestion-details {
+    color: gray;
+    font-size: small;
+}
 
 
 /*Footers*/
@@ -66,10 +125,28 @@ body {
 /* Index */
 #filters {
     display: flex;
-    margin-left: 2rem;
+    overflow-x: scroll;
     font-size: large;
+    width: 60%;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    scrollbar-color: #fe424d white;
+}
+#filters a {
+    text-decoration: none !important;
+}
+#filter-left, #filter-right {
+    color: #222222;
+    font-size: 1.5rem;
+    transition: 0.5s ease;
+    opacity: 0.5;
+}
+#filter-left:hover, #filter-right:hover {
+    scale: 1.2;
+    cursor: pointer;
 }
 .filter {
+    color: rgb(66, 63, 63);
     text-align: center;
     margin-top: 2rem;   
     margin-right: 2rem;
@@ -85,32 +162,17 @@ body {
 .taxToggle {
     border: 1px solid black !important;
     border-radius: 1rem;
-    padding: 1rem 0rem !important;
-    padding-left: 2rem !important;
-    padding-right: 4.5rem !important; 
+   
 }
 #tax-info {
     font-style: italic;     
 }
-#search-btn {
-    background-color: #fe424d;
-    color: white;
-    border: none;
-    border-radius: 5rem;
+.sort {
+    font-size: xx-large;
+    color: rgba(254, 66, 77, 0.9);
 }
-#search-btn:hover{
-    background-color: #fe424d;
-    color: white;
-    border: none;
-}
-#search-btn i {
-    display: inline;
-    margin-right: 1rem;
-}
-#search-bar {
-    border-radius: 5rem;
-    padding: 0.5rem 1rem 0.5rem 3rem;
-    width: 25rem;
+.sort:hover {
+    cursor: pointer;
 }
 
 

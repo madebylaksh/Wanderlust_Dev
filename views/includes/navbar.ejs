@@ -13,9 +13,10 @@
                   <a class="nav-link active" aria-current="page" href="/">Explore</a>
               </li>
             </ul>
-            <form class="d-flex" role="search">
+            <form id="search-form" class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search listings" aria-label="Search" id="search-bar"/>
                 <button class="btn btn-outline-success" type="submit" id="search-btn"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+                <div class="suggestions"> </div>
             </form> 
             <ul class="navbar-nav mb-2 mb-lg-0 ms-auto me-3">
                 <li class="nav-item">
@@ -41,8 +42,8 @@
           </ul>
 
           <!--
-          <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+          <form class="d-flex" role="search" action="">
+              <input name="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
               <button class="btn btn-outline-success" type="submit">Search</button>
           </form> 
           -->

@@ -16,8 +16,8 @@ app.use(express.urlencoded({extended: true}));
 app.use(methodOverride("_method"));
 app.engine("ejs",ejsMate);
 
-// const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
-const MONGO_URL = process.env.ATLASDB_URL;
+const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
+// const MONGO_URL = process.env.ATLASDB_URL;
 async function main() { await mongoose.connect(MONGO_URL); }
 main().then(()=>console.log("Connection to MongoDB successful.")).catch(e=> {console.error(e.message)});
 
@@ -55,6 +55,8 @@ app.use((req,res,next)=> {
 const listingsRouter = require("./routes/listing");
 const reviewRouter = require("./routes/review");
 const userRouter = require("./routes/user");
+const categoryRouter = require("./routes/category");
+const searchRouter = require("./routes/search");
 
 
 
@@ -82,6 +84,8 @@ app.get("/", (req,res)=> {
     res.redirect("/listings");
 })
 
+app.use("/listings/category", categoryRouter);
+app.use("/listings/search", searchRouter);
 app.use("/listings", listingsRouter);
 app.use("/listings/:id/review", reviewRouter);
 app.use("/user", userRouter);
