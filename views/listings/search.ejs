@@ -1,0 +1,33 @@
+<%- layout("layouts/boilerplate.ejs") %>
+
+    <body>
+        <h3 class="ms-4">Search results for "<%=search%>"</h3>
+        <% if (listings.length===0) { %>
+            <div class="d-flex flex-column justify-content-end align-items-center position-relative">
+                <h4 class="text-center text-danger mt-5 mb-4" id="no-result-heading"> No results found</h4>
+                <img class="no-results-image" src="/images/no-results-1.gif">
+            </div>
+            <% } %>
+                <div class="listings-container">
+                    <div class="row justify-content-center">
+                        <% for (let list of listings) { %>
+                            <div class="col-8 col-lg-3 col-md-4 col-sm-6">
+                                <div class="card listing-card">
+                                    <a class="listing-link" href="/listings/<%-list._id%>">
+                                        <img src="<%-list.image.url%>" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <p class="card-text">
+                                                <b><%- list.title %></b> <br>
+                                                &#8377;<%- list.price.toLocaleString("en-IN")%>/ night
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <span id="tax-info" hidden> +18% GST </span>
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <% } %>
+                    </div>
+                </div>
+
+    </body>

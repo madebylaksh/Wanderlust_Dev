@@ -3,9 +3,9 @@
     <body>
         <!-- <a href="/listings/new"> Create a new Listing </a> -->
 
-        <div class="d-flex align-items-center ms-3">
+        <div class="topbar d-flex flex-wrap-reverse align-items-center justify-content-between s-3">
             <i id="filter-left" class="fa-solid fa-circle-chevron-left me-4"></i>
-            <div id="filters">
+            <div id="filters" class="mx-sm-auto mx-lg-0">
                 <a href="/listings/category/Trending">
                     <div class="filter">
                         <i class="fa-solid fa-fire"></i>
@@ -167,13 +167,19 @@
                     </div>
                 </a>
             </div>
+
             <i id="filter-right" class="fa-solid fa-circle-chevron-right ms-2 me-3"></i>
-            <div class="sort ms-auto me-4">
-                <i class="fa-solid fa-filter"></i>
-            </div>
-            <div class="taxToggle me-4 form-check-reverse form-switch py-lg-3 ps-lg-4 pe-lg-5 ">
-                <label class="form-check-label" for="switchCheckDefault">Display taxes</label>
-                <input class="form-check-input" type="checkbox" id="switchCheckDefault">
+
+            
+            
+            <div class="d-flex ms-lg-auto me-lg-4 gap-3 toggle-sort">
+                <div class="sort">
+                    <i class="fa-solid fa-filter"></i>
+                </div>
+                <div class="taxToggle me-1 form-check-reverse form-switch py-lg-3 ps-lg-4 pe-lg-5 pt-2">
+                    <label class="form-check-label" for="switchCheckDefault">Display taxes</label>
+                    <input class="form-check-input" type="checkbox" id="switchCheckDefault">
+                </div>
             </div>
         </div>
 

@@ -7,10 +7,13 @@ body {
 .containerBody {
     flex: 1
 }
-.listings-container {
-    padding: 2rem 5rem;
-}
 
+@media screen and (max-width: 900px) {
+    .flash .col-7 {
+        width: 90% !important;
+        font-size: smaller;
+    }
+}
 
 /*Navbar*/
 .navbar {
@@ -46,7 +49,7 @@ body {
 #search-bar {
     border-radius: 5rem;
     padding: 0.5rem 1rem 0.5rem 3rem;
-    width: 25rem;
+    min-width: min(25rem, 100%);
 }
 #search-form {
     position: relative;
@@ -56,7 +59,7 @@ body {
     top: 3rem;
     left: 2rem;
     background-color: white;
-    width: 70%;
+    width: 90%;
     height: fit-content;
     max-height: 15rem;
     overflow-y: auto;                                   /* scrollbar only when required */
@@ -86,6 +89,27 @@ body {
 .suggestion-details {
     color: gray;
     font-size: small;
+}
+
+@media screen and (max-width: 992px) {
+    #search-btn-text {
+        display: none;
+    }
+    #search-btn {
+        margin-left: auto;
+        margin-right: 0;
+        margin-top: 0.3rem;
+        border-radius: 50%;
+    }
+    #search-btn i {
+        margin-right: 0;
+    }
+    .container-fluid {
+        padding: 4px !important;
+    }
+    .suggestions {
+        width: 80%;
+    }
 }
 
 
@@ -161,8 +185,6 @@ body {
 }
 .taxToggle {
     border: 1px solid black !important;
-    border-radius: 1rem;
-   
 }
 #tax-info {
     font-style: italic;     
@@ -174,7 +196,45 @@ body {
 .sort:hover {
     cursor: pointer;
 }
-
+.listings-container {
+    padding: 2rem 5rem;
+}
+@media screen and (max-width: 992px) {
+    .toggle-sort {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin: 0 1rem;
+        font-size: small;
+    }
+    .taxToggle {
+        border: 0 !important;
+        border-bottom: 1px solid black !important;
+    }
+    .filter {
+        margin-right: 1.2rem;
+    }
+}
+@media screen and (max-width: 853px) {
+    .toggle-sort {
+        flex-basis: 100%;
+    }
+    .sort {
+        font-size: 1.5rem;
+    }
+}
+@media screen and (max-width: 570px) {
+    .listings-container .col-8 {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+    .listings-container img {
+        height: 15rem !important;
+        min-width: 15rem !important;
+    }
+    .topbar, .filter {
+        font-size: medium;
+    }
+}
 
 /*Cards*/
 .listing-card {
@@ -188,9 +248,11 @@ body {
     height: 20vw;
     min-height: 10rem;
 }
+.card-img-top {
+    transition: filter 0.3s ease;
+}
 .card-img-top:hover {
-    background-color: white;
-    opacity: 0.8;
+    filter: brightness(0.8);
 }
 .card-body {
     padding: 0px !important;
@@ -207,7 +269,16 @@ body {
     border: none !important;
     padding: 1rem !important;
 }
-
+@media screen and (max-width: 900px) {
+    .new .col-6{
+        width: 90% !important;
+        font-size: smaller;
+    }
+    .new h1 {
+        margin-bottom: 2rem;
+        margin-top: 1rem !important;
+    }
+}
 
 
 /*Edit*/
@@ -216,7 +287,15 @@ body {
     border: none !important;
     padding: 1rem !important;
 }
-
+@media screen and (max-width: 900px) {
+    .edit .col-6{
+        width: 90% !important;
+        font-size: smaller;
+    }
+    .edit h1 {
+        margin-top: 1rem !important;
+    }
+}
 
 
 /*Show*/
@@ -225,6 +304,17 @@ body {
 }
 .img-show:hover {
     opacity: 1;
+}
+#show-details p {
+    font-weight: 600;
+    font-size: medium;
+}
+#show-description {
+    color: rgb(128, 65, 65);
+    width: 70%;
+    font-style: italic;
+    border-bottom: black solid 1px;
+    padding-bottom: 1rem;
 }
 .delete-btn {
     padding: 1rem !important;
@@ -243,7 +333,34 @@ textarea[name="review[comment]"] {
     font-style: italic;
     font-size: large;
 }
-
+@media screen and (max-width: 992px) {
+    .review-card.card-text {
+        font-size: large;
+    }
+    .card.review-card {
+        width: 90% !important;
+    }
+    #show-details {
+        width: 70% !important;
+    }
+}
+@media screen and (max-width: 768px) {
+    .review-card.card-text {
+        font-size: medium;
+    }
+    #show-details {
+        width: 90% !important;
+    }
+    #show-details p {
+        font-size: small;
+    }
+    #show-description {
+        width: 100%;
+    }
+    .img-show {
+        height: 20rem;
+    }
+}
 
 /* User */
 
@@ -255,4 +372,25 @@ textarea[name="review[comment]"] {
 }
 .signup input {
     padding: 1rem;
+}
+@media screen and (max-width: 900px) {
+    .signup .col-5 {
+        width: 90% !important;
+    }
+}
+/* Login */
+@media screen and (max-width: 900px) {
+    .login .col-5 {
+        width: 90% !important;
+    }
+}
+
+
+
+
+/* Search */
+.no-results-image {
+    height: 30rem;
+    max-width: 40rem;
+    width: 100%;
 }

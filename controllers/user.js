@@ -31,13 +31,14 @@ exports.renderLoginForm = (req,res)=> {
 exports.loginUser = (req,res)=>{
     // successFlash wasn't working
     req.flash("success", "Welcome back to WanderLust.");
+    console.log(req.origUrl);
     res.redirect(req.origUrl || "/listings");                
 }
 
 exports.logoutUser = (req,res,next)=> {
     req.logout((e)=> {
         if (e) {return next(e)}
-        req.flash("success", "Successfully Logged out from server.");
+        req.flash("success", "Successfully Logged out from the server");
         res.redirect("/listings");
     })
 }

@@ -23,6 +23,18 @@ exports.suggestions = async (req,res,next)=> {
 }
 
 exports.show = async(req,res,next)=> {
-    const search = req.query.search;
-    const listings = Listing.
+    const search = req.query.search.trim();
+    if (search.length===0) return res.redirect("/listings");
+    const escaped = search.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const regex = new RegExp(escaped, "i");
+
+    const listings = await Listing.find({
+        $or: [
+            {title: regex},
+            {country: regex},
+            {location: regex},
+            {category: regex}
+        ]
+    });
+    res.render("listings/search.ejs", {listings, search});
 }
